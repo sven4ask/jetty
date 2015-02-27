@@ -1,4 +1,4 @@
-FROM dockerfile/java:openjdk-7-jre
+FROM askcs/java:openjdk-7-jre
 MAINTAINER Sven Stam <sven.stam@gmail.com>
 
 # Install packages
