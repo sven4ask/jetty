@@ -9,7 +9,7 @@ RUN apt-get update && \
 # Download and install jetty
 ENV JETTY_VERSION 9.2.7
 ENV RELEASE_DATE v20150116
-RUN wget http://download.eclipse.org/jetty/${JETTY_VERSION}.${RELEASE_DATE}/dist/jetty-distribution-${JETTY_VERSION}.${RELEASE_DATE}.tar.gz && \
+RUN wget http://archive.eclipse.org/jetty/${JETTY_VERSION}.${RELEASE_DATE}/dist/jetty-distribution-${JETTY_VERSION}.${RELEASE_DATE}.tar.gz && \
     tar -xzvf jetty-distribution-${JETTY_VERSION}.${RELEASE_DATE}.tar.gz && \
     rm -rf jetty-distribution-${JETTY_VERSION}.${RELEASE_DATE}.tar.gz && \
     mv jetty-distribution-${JETTY_VERSION}.${RELEASE_DATE}/ /opt/jetty
