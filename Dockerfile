@@ -16,9 +16,11 @@ RUN wget http://archive.eclipse.org/jetty/${JETTY_VERSION}.${RELEASE_DATE}/dist/
 
 # Configure Jetty user and clean up install
 RUN useradd jetty && \
-    chown -R jetty:jetty /opt/jetty 
+    chown -R jetty:jetty /opt/jetty && \
     rm -rf /opt/jetty/webapps.demo
 
 RUN cp /opt/jetty/bin/jetty.sh /etc/init.d/jetty
+
+COPY jetty.xml /opt/jetty/etc/jetty.xml
 
 RUN echo "NO_START=0 # Start on boot\nJETTY_HOST=0.0.0.0 # Listen to all hosts\nJETTY_ARGS=jetty.port=8080\nJETTY_USER=jetty # Run as this user\n JETTY_HOME=/opt/jetty" >> /etc/default/jetty
